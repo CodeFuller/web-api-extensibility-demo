@@ -190,6 +190,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MessageHandlers\ApiKeyValidationMessageHandler.cs" />
+    <Compile Include="MessageHandlers\StubMessageHandler.cs" />
+    <Compile Include="MessageHandlers\TimingMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
