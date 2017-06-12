@@ -1,20 +1,21 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using WebApiExtensibilityDemo.Helpers;
 
 namespace WebApiExtensibilityDemo.MessageHandlers
 {
+	/// <summary>
+	/// Custom Message Handler that performs API key validation.
+	/// </summary>
 	public class ApiKeyValidationMessageHandler : DelegatingHandler
 	{
 		protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request,
 			CancellationToken cancellationToken)
 		{
-			IEnumerable<string> apiKeyValues;
-			if (!request.Headers.TryGetValues("ApiKey", out apiKeyValues) ||
-				!ApiKeyIsValid(apiKeyValues.SingleOrDefault()))
+			string apiKey = request.TryGetHeaderValue("ApiKey");
+			if (!ApiKeyIsValid(apiKey))
 			{
 				return new HttpResponseMessage(HttpStatusCode.Forbidden)
 				{

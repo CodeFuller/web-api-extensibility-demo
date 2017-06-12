@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace WebApiExtensibilityDemo.MessageHandlers
 {
+	/// <summary>
+	/// Custom Message Handler that extends response with request execution time.
+	/// </summary>
 	public class TimingMessageHandler : DelegatingHandler
 	{
 		protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request,

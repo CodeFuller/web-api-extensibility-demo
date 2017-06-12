@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiExtensibilityDemo", "WebApiExtensibilityDemo\WebApiExtensibilityDemo.csproj", "{5B99EA8F-4277-4BC2-A1C2-4B7C2CB3F7AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiExtensibilityDemo.Common", "WebApiExtensibilityDemo.Common\WebApiExtensibilityDemo.Common.csproj", "{C7C87668-FFE9-4263-969D-9B82CC77565A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiExtensibilityDemo.SampleWebApiPlugin", "WebApiExtensibilityDemo.SampleWebApiPlugin\WebApiExtensibilityDemo.SampleWebApiPlugin.csproj", "{7996F91F-4DA1-4441-8F59-0B2F7DAC4B54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5B99EA8F-4277-4BC2-A1C2-4B7C2CB3F7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B99EA8F-4277-4BC2-A1C2-4B7C2CB3F7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B99EA8F-4277-4BC2-A1C2-4B7C2CB3F7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C87668-FFE9-4263-969D-9B82CC77565A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C87668-FFE9-4263-969D-9B82CC77565A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C87668-FFE9-4263-969D-9B82CC77565A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C87668-FFE9-4263-969D-9B82CC77565A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7996F91F-4DA1-4441-8F59-0B2F7DAC4B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7996F91F-4DA1-4441-8F59-0B2F7DAC4B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7996F91F-4DA1-4441-8F59-0B2F7DAC4B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7996F91F-4DA1-4441-8F59-0B2F7DAC4B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
