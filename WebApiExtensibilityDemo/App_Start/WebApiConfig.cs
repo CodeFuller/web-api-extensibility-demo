@@ -1,7 +1,9 @@
 ﻿using System.Configuration;
 using System.Web.Http;
+using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using Microsoft.Practices.Unity;
+using WebApiExtensibilityDemo.ActionSelectors;
 using WebApiExtensibilityDemo.ControllerActivators;
 using WebApiExtensibilityDemo.ControllerResolvers;
 using WebApiExtensibilityDemo.MessageHandlers;
@@ -20,7 +22,8 @@ namespace WebApiExtensibilityDemo
 
 			//ConfigureMessageHandlers(config);
 			//ConfigureControllerSelectors(config);
-			ConfigureControllerActivator(config);
+			//ConfigureControllerActivator(config);
+			ConfigureActionSelector(config);
 
 			// Web API routes
 			config.MapHttpAttributeRoutes();
@@ -73,6 +76,11 @@ namespace WebApiExtensibilityDemo
 		private static void ConfigureControllerActivator(HttpConfiguration config)
 		{
 			config.Services.Replace(typeof(IHttpControllerActivator), new UnityHttpControllerActivator(diContainer));
+		}
+
+		private static void ConfigureActionSelector(HttpConfiguration config)
+		{
+			config.Services.Replace(typeof(IHttpActionSelector), new StubHttpActionSelector());
 		}
 	}
 }

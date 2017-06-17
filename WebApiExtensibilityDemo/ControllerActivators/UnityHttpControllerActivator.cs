@@ -6,6 +6,9 @@ using Microsoft.Practices.Unity;
 
 namespace WebApiExtensibilityDemo.ControllerActivators
 {
+	/// <summary>
+	/// Unity based controller activator.
+	/// </summary>
 	public class UnityHttpControllerActivator : IHttpControllerActivator
 	{
 		private readonly IUnityContainer unityContainer;

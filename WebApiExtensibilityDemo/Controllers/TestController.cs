@@ -4,9 +4,15 @@ namespace WebApiExtensibilityDemo.Controllers
 {
 	public class TestController : ApiController
 	{
-		public string Get()
+		public string GetContent()
 		{
 			return "Some test content";
+		}
+
+		[NonAction]
+		public string GetContentStub()
+		{
+			return "Some STUB content";
 		}
 	}
 }
