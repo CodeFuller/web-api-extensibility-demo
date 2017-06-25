@@ -25,6 +25,7 @@ namespace WebApiExtensibilityDemo.ControllerResolvers
 			this.controllerTypeResolver = controllerTypeResolver;
 		}
 
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Instance of HttpResponseMessage should not be disposed")]
 		public override HttpControllerDescriptor SelectController(HttpRequestMessage request)
 		{
 			var controllerName = GetControllerName(request);

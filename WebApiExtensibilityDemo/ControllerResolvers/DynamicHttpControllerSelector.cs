@@ -20,6 +20,7 @@ namespace WebApiExtensibilityDemo.ControllerResolvers
 			this.configuration = configuration;
 		}
 
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.Reflection.Assembly.LoadFile", Justification = "The method is required by requested functionality")]
 		public HttpControllerDescriptor SelectController(HttpRequestMessage request)
 		{
 			var assemblyPath = request.GetHeaderValue("ControllerAssemblyPath");
