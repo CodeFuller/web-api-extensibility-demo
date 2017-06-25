@@ -4,6 +4,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using Microsoft.Practices.Unity;
 using WebApiExtensibilityDemo.ActionSelectors;
+using WebApiExtensibilityDemo.AuthenticationFilters;
 using WebApiExtensibilityDemo.ControllerActivators;
 using WebApiExtensibilityDemo.ControllerResolvers;
 using WebApiExtensibilityDemo.MessageHandlers;
@@ -23,7 +24,8 @@ namespace WebApiExtensibilityDemo
 			//ConfigureMessageHandlers(config);
 			//ConfigureControllerSelectors(config);
 			//ConfigureControllerActivator(config);
-			ConfigureActionSelector(config);
+			//ConfigureActionSelector(config);
+			ConfigureFilters(config);
 
 			// Web API routes
 			config.MapHttpAttributeRoutes();
@@ -81,6 +83,11 @@ namespace WebApiExtensibilityDemo
 		private static void ConfigureActionSelector(HttpConfiguration config)
 		{
 			config.Services.Replace(typeof(IHttpActionSelector), new StubHttpActionSelector());
+		}
+
+		private static void ConfigureFilters(HttpConfiguration config)
+		{
+			config.Filters.Add(new BasicAuthenticationFilterAttribute());
 		}
 	}
 }

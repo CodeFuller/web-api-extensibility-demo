@@ -202,6 +202,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="AuthenticationFilters\AddChallengeToHttpResponse.cs" />
+    <Compile Include="AuthenticationFilters\AuthenticationAgent.cs" />
+    <Compile Include="AuthenticationFilters\IAuthenticationAgent.cs" />
+    <Compile Include="AuthenticationFilters\BasicAuthenticationFilterAttribute.cs" />
     <Compile Include="ControllerActivators\UnityHttpControllerActivator.cs" />
     <Compile Include="ControllerResolvers\DynamicHttpControllerSelector.cs" />
     <Compile Include="ControllerResolvers\PluginAssembliesResolver.cs" />
