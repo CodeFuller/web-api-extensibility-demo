@@ -2,9 +2,11 @@
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
+using System.Web.Http.Filters;
 using Microsoft.Practices.Unity;
 using WebApiExtensibilityDemo.ActionSelectors;
 using WebApiExtensibilityDemo.AuthenticationFilters;
+using WebApiExtensibilityDemo.AuthorizationFilters;
 using WebApiExtensibilityDemo.ControllerActivators;
 using WebApiExtensibilityDemo.ControllerResolvers;
 using WebApiExtensibilityDemo.MessageHandlers;
@@ -42,6 +44,9 @@ namespace WebApiExtensibilityDemo
 			diContainer = new UnityContainer();
 
 			//	Put any dependency registrations here
+
+			diContainer.RegisterType<IAuthorizationFilter, SubscriptionAuthorizeFilter>();
+			diContainer.RegisterType<ISubscriptionRepository, TestSubscriptionRepository>();
 		}
 
 		private static void ConfigureMessageHandlers(HttpConfiguration config)
@@ -88,6 +93,9 @@ namespace WebApiExtensibilityDemo
 		private static void ConfigureFilters(HttpConfiguration config)
 		{
 			config.Filters.Add(new BasicAuthenticationFilterAttribute());
+			//config.Filters.Add(new ContentAuthorizeAttribute());
+			//config.Filters.Add(new SubscriptionAuthorizeAttribute());
+			config.Filters.Add(diContainer.Resolve<IAuthorizationFilter>());
 		}
 	}
 }

@@ -14,8 +14,8 @@ namespace WebApiExtensibilityDemo.AuthenticationFilters
 			userPasswords.Add("user1", "password1");
 			userPasswords.Add("user2", "password2");
 
-			userRoles.Add("user1", new[] { "Administrator" });
-			userRoles.Add("user2", new[] { "Administrator", "ContentUser" });
+			userRoles.Add("user1", new[] { "ContentUser", "ContentEditor" });
+			userRoles.Add("user2", new[] { "ContentUser" });
 		}
 
 		public Task<IPrincipal> AuthenticateUser(string userName, string userPassword)

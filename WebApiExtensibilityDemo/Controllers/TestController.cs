@@ -9,6 +9,11 @@ namespace WebApiExtensibilityDemo.Controllers
 			return "Some test content";
 		}
 
+		[HttpPost]
+		public void AddContent(string content)
+		{
+		}
+
 		[NonAction]
 		public string GetContentStub()
 		{

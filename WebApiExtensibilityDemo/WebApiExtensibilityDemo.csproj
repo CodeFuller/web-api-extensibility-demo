@@ -210,6 +210,11 @@
     <Compile Include="AuthenticationFilters\AuthenticationAgent.cs" />
     <Compile Include="AuthenticationFilters\IAuthenticationAgent.cs" />
     <Compile Include="AuthenticationFilters\BasicAuthenticationFilterAttribute.cs" />
+    <Compile Include="AuthorizationFilters\ISubscriptionRepository.cs" />
+    <Compile Include="AuthorizationFilters\SubscriptionAuthorizeAttribute.cs" />
+    <Compile Include="AuthorizationFilters\ContentAuthorizeAttribute.cs" />
+    <Compile Include="AuthorizationFilters\SubscriptionAuthorizeFilter.cs" />
+    <Compile Include="AuthorizationFilters\TestSubscriptionRepository.cs" />
     <Compile Include="ControllerActivators\UnityHttpControllerActivator.cs" />
     <Compile Include="ControllerResolvers\DynamicHttpControllerSelector.cs" />
     <Compile Include="ControllerResolvers\PluginAssembliesResolver.cs" />
