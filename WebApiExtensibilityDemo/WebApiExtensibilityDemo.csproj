@@ -159,6 +159,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Wddx.Net, Version=1.1.1.21807, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wddx.Net.1.1.1\lib\net40\Wddx.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -170,7 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionSelectors\StubHttpActionSelector.cs" />
@@ -230,6 +233,10 @@
     <Compile Include="MessageHandlers\ApiKeyValidationMessageHandler.cs" />
     <Compile Include="MessageHandlers\StubMessageHandler.cs" />
     <Compile Include="MessageHandlers\TimingMessageHandler.cs" />
+    <Compile Include="ModelBinding\IWddxSerializer.cs" />
+    <Compile Include="ModelBinding\WddxFormatter.cs" />
+    <Compile Include="ModelBinding\WddxSerializerWrapper.cs" />
+    <Compile Include="Models\SomeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

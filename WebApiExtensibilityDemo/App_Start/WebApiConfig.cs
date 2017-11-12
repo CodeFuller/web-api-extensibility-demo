@@ -10,6 +10,7 @@ using WebApiExtensibilityDemo.AuthorizationFilters;
 using WebApiExtensibilityDemo.ControllerActivators;
 using WebApiExtensibilityDemo.ControllerResolvers;
 using WebApiExtensibilityDemo.MessageHandlers;
+using WebApiExtensibilityDemo.ModelBinding;
 
 namespace WebApiExtensibilityDemo
 {
@@ -27,7 +28,9 @@ namespace WebApiExtensibilityDemo
 			//ConfigureControllerSelectors(config);
 			//ConfigureControllerActivator(config);
 			//ConfigureActionSelector(config);
-			ConfigureFilters(config);
+			//ConfigureFilters(config);
+
+			ConfigureModelBinding(config);
 
 			// Web API routes
 			config.MapHttpAttributeRoutes();
@@ -47,6 +50,7 @@ namespace WebApiExtensibilityDemo
 
 			diContainer.RegisterType<IAuthorizationFilter, SubscriptionAuthorizeFilter>();
 			diContainer.RegisterType<ISubscriptionRepository, TestSubscriptionRepository>();
+			diContainer.RegisterType<IWddxSerializer, WddxSerializerWrapper>();
 		}
 
 		private static void ConfigureMessageHandlers(HttpConfiguration config)
@@ -96,6 +100,11 @@ namespace WebApiExtensibilityDemo
 			//config.Filters.Add(new ContentAuthorizeAttribute());
 			//config.Filters.Add(new SubscriptionAuthorizeAttribute());
 			config.Filters.Add(diContainer.Resolve<IAuthorizationFilter>());
+		}
+
+		private static void ConfigureModelBinding(HttpConfiguration config)
+		{
+			config.Formatters.Add(diContainer.Resolve<WddxFormatter>());
 		}
 	}
 }

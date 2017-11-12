@@ -1,23 +1,32 @@
 ﻿using System.Web.Http;
+using WebApiExtensibilityDemo.Models;
 
 namespace WebApiExtensibilityDemo.Controllers
 {
 	public class TestController : ApiController
 	{
-		public string GetContent()
+		public SomeData GetContent()
 		{
-			return "Some test content";
+			return new SomeData
+			{
+				StringField = "Some string",
+				NumericField = 123,
+			};
 		}
 
 		[HttpPost]
-		public void AddContent(string content)
+		public void AddContent(SomeData data)
 		{
 		}
 
 		[NonAction]
-		public string GetContentStub()
+		public SomeData GetContentStub()
 		{
-			return "Some STUB content";
+			return new SomeData
+			{
+				StringField = "Stub data",
+				NumericField = 123,
+			};
 		}
 	}
 }
